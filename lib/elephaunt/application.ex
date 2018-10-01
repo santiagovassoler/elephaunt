@@ -11,7 +11,7 @@ defmodule Elephaunt.Application do
       # Start the Ecto repository
       supervisor(Elephaunt.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(ElephauntWeb.Endpoint, []),
+      supervisor(ElephauntWeb.Endpoint, [])
       # Start your own worker by calling: Elephaunt.Worker.start_link(arg1, arg2, arg3)
       # worker(Elephaunt.Worker, [arg1, arg2, arg3]),
     ]

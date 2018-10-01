@@ -28,8 +28,9 @@ defmodule ElephauntWeb do
 
   def view do
     quote do
-      use Phoenix.View, root: "lib/elephaunt_web/templates",
-                        namespace: ElephauntWeb
+      use Phoenix.View,
+        root: "lib/elephaunt_web/templates",
+        namespace: ElephauntWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 2, view_module: 1]

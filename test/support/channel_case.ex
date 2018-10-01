@@ -25,13 +25,13 @@ defmodule ElephauntWeb.ChannelCase do
     end
   end
 
-
   setup tags do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Elephaunt.Repo)
+
     unless tags[:async] do
       Ecto.Adapters.SQL.Sandbox.mode(Elephaunt.Repo, {:shared, self()})
     end
+
     :ok
   end
-
 end
