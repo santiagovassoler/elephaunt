@@ -17,11 +17,15 @@ defmodule Elephaunt.Accounts.User do
     user
     |> cast(attrs, [:first_name, :last_name, :email, :password, :role])
     |> validate_required([:first_name, :last_name, :email, :password, :role])
-    |> validate_formate(:email, ~r/@/)
+    |> validate_format(:email, ~r/@/)
     |> update_change(:email, &String.downcase(&1))
     |> validate_length(:password, min: 8, max: 100)
     |> unique_constraint(:email)
-    |> hash_password()
+    |> hash_password
+  end
+
+  defp hash_password(%Ecto.Changeset{valid?: true, changes: %{password: password}} = changeset) do
+    change(changeset, Comeonin.Argon2.add_hash(password))
   end
 
   defp hash_password(changeset) do
