@@ -3,6 +3,7 @@ defmodule ElephauntWeb.Router do
 
   pipeline :api do
     plug(:accepts, ["json"])
+    plug(ElephauntWeb.Plugs.Context)
   end
 
   scope "/api" do
