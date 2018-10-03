@@ -4,6 +4,7 @@ defmodule ElephauntWeb.Schema.Types do
   alias ElephauntWeb.Schema.Types
 
   import_types(Types.Usertype)
+  import_types(Types.Sessiontype)
 
-  
+
 end

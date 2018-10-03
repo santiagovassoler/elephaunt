@@ -20,6 +20,11 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:user_id]
 
+  # Guardian config details
+config :elephaunt, Elephaunt.Guardian,
+  issuer: "elephaunt",
+  secret_key: "/oI+kgkwd1CDP1xqPANcIWEl3frK/C0iOpsFpl2/+4aZ6QH2e+0lGtN4W9M21Aog"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
