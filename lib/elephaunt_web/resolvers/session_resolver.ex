@@ -1,6 +1,5 @@
 defmodule ElephauntWeb.Resolvers.SessionResolver do
-
-alias Elephaunt.{Accounts, Guardian}
+  alias Elephaunt.{Accounts, Guardian}
 
   def login_user(_, %{input: input}, _) do
     with {:ok, user} <- Accounts.Session.authenticate(input),

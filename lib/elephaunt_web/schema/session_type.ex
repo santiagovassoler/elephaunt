@@ -10,5 +10,4 @@ defmodule ElephauntWeb.Schema.Types.Sessiontype do
     field(:email, non_null(:string))
     field(:password, non_null(:string))
   end
-
 end

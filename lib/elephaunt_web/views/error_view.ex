@@ -1,5 +1,5 @@
 defmodule ElephauntWeb.ErrorView do
-  #use ElephauntWeb, :view
+  # use ElephauntWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

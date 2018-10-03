@@ -5,6 +5,4 @@ defmodule ElephauntWeb.Schema.Types do
 
   import_types(Types.Usertype)
   import_types(Types.Sessiontype)
-
-
 end

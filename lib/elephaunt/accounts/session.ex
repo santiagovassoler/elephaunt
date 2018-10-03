@@ -1,5 +1,4 @@
 defmodule Elephaunt.Accounts.Session do
-
   alias Elephaunt.Accounts.User
   alias Elephaunt.Repo
 

@@ -1,6 +1,5 @@
 defmodule ElephauntWeb.Resolvers.UserResolver do
-
-alias Elephaunt.Accounts
+  alias Elephaunt.Accounts
 
   def users(_, _, %{context: context}) do
     IO.inspect(context)
@@ -10,5 +9,4 @@ alias Elephaunt.Accounts
   def register_user(_, %{input: input}, _) do
     Accounts.create_user(input)
   end
-
 end

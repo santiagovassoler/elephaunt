@@ -2,12 +2,14 @@ defmodule ElephauntWeb.Schema do
   use Absinthe.Schema
 
   alias ElephauntWeb.Resolvers
+  alias ElephauntWeb.Schema.Middleware
 
   import_types(ElephauntWeb.Schema.Types)
 
   query do
     @desc "Get a list of all users"
     field :users, list_of(:user_type) do
+      middleware(Middleware.Authorize, :any)
       resolve(&Resolvers.UserResolver.users/3)
     end
   end
@@ -25,5 +27,4 @@ defmodule ElephauntWeb.Schema do
       resolve(&Resolvers.SessionResolver.login_user/3)
     end
   end
-
 end
